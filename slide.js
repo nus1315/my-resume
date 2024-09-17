@@ -1,24 +1,27 @@
+// slide.js
 let slideIndex = 0;
 
-function showSlides() {
-  const slides = document.querySelectorAll('.slide');
-  slides.forEach((slide, index) => {
-    slide.style.transform = `translateX(-${slideIndex * 100}%)`;
-  });
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+    if (index >= totalSlides) slideIndex = 0;
+    if (index < 0) slideIndex = totalSlides - 1;
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
 }
 
 function nextSlide() {
-  const slides = document.querySelectorAll('.slide');
-  slideIndex = (slideIndex + 1) % slides.length;
-  showSlides();
+    slideIndex++;
+    showSlide(slideIndex);
 }
 
 function prevSlide() {
-  const slides = document.querySelectorAll('.slide');
-  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-  showSlides();
+    slideIndex--;
+    showSlide(slideIndex);
 }
 
-// Initialize
-showSlides();
-setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
+document.querySelector('.next').addEventListener('click', nextSlide);
+document.querySelector('.prev').addEventListener('click', prevSlide);
+
+// Initialize the first slide
+showSlide(slideIndex);
+

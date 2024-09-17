@@ -1,246 +1,296 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
 }
 
 header {
-    background-color: #333; 
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+  background-color: #333; 
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 nav {
-    background-color: #444;
-    color: #fff;
-    padding: 1rem;
+  background-color: #444;
+  color: #fff;
+  padding: 1rem;
 }
 #navbar {
-    position: -webkit-sticky; 
-    position: sticky;
-    top: 0;
-    padding: 10px 0;
-    z-index: 1000;
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  padding: 10px 0;
+  z-index: 1000;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 section {
-    padding: 2rem 0;
-    left:20;
-    width: 80%;
-    margin: 0 auto;
-    display:block;
+  padding: 2rem 0;
+  left:20;
+  width: 80%;
+  margin: 0 auto;
+  display:block;
 }
 #about {
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-  }
-  .about {
-    flex: 1;
-  }
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.about {
+  flex: 1;
+}
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    right: 20px;
+  width: 80%;
+  margin: 0 auto;
+  right: 20px;
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 a.hear{
-  color: #8096d4; 
-  text-decoration: none; 
+color: #8096d4; 
+text-decoration: none; 
 }
 .button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background-color: #3498db; /* สีพื้นหลังของปุ่ม */
-  border: none;
-  border-radius: 5px; /* ทำมุมโค้งของปุ่ม */
-  cursor: pointer;
-  transition: background-color 0.3s; /* การเปลี่ยนสีพื้นหลังเมื่อ hover */
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+color: white;
+background-color: #229799; /* สีพื้นหลังของปุ่ม */
+border: none;
+border-radius: 5px; /* ทำมุมโค้งของปุ่ม */
+cursor: pointer;
+transition: background-color 0.3s; /* การเปลี่ยนสีพื้นหลังเมื่อ hover */
 }
 
 .button:hover {
-  background-color: #2980b9; /* สีพื้นหลังเมื่อ hover */
+background-color: #A04747; /* สีพื้นหลังเมื่อ hover */
 }
 
 .button:active {
-  background-color: #1f77d2; /* สีพื้นหลังเมื่อกดปุ่ม */
+background-color: #A04747; /* สีพื้นหลังเมื่อกดปุ่ม */
 }
 
 .project-card {
-    background-color: #fff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .project-card h3 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-card a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 
 }
 #contact {
-    background-color: #fff;
-    padding: 50px 20px; 
-    text:left;
+  background-color: #fff;
+  padding: 50px 20px; 
+  text:left;
 }
 #form {
-    background-color: #fff;
-    padding: 50px 20px;
-    text-align:right;
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align:right;
 }
 .column {
-    float: left;
-    width: 50%;
-  }
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .bubble-photo img {
-    width: 222px;
-    height: 294.8px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(181, 143, 241, 0.5), 0 0 50px rgba(181, 143, 241, 0.5);
-    transition: transform 0.3s ease;
-    margin: 0 auto;
-    flex: 1;
-    text-align: right;
+  float: left;
+  width: 50%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.bubble-photo img {
+  width: 222px;
+  height: 294.8px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(181, 143, 241, 0.5), 0 0 50px rgba(181, 143, 241, 0.5);
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+  flex: 1;
+  text-align: right;
 }
 
 .bubble-photo img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(181, 143, 241, 0.5), 0 0 75px rgba(181, 143, 241, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(181, 143, 241, 0.5), 0 0 75px rgba(181, 143, 241, 0.5);
 }
 
 #education {
-    background-color: #f9f9f9;
-    padding: 50px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  #education h2 {
-    text-align: center;
-    font-size: 36px;
-    color: #1a1919;
-    margin-bottom: 40px;
-    font-weight: 600;
-  }
-  
-  .education-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .education-item {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .education-item:hover {
-    transform: scale(1.03);
-  }
-  
-  .education-item h3 {
-    font-size: 24px;
-    color: #151616;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-  
-  .education-details {
-    font-size: 16px;
-    color: #110b10;
-    margin-bottom: 15px;
-  }
-  
-  .education-details .institution {
-    font-weight: bold;
-    color: #1c1f20;
-  }
-  
-  .education-details .date {
-    color: #161818;
-  }
-  
-  .education-item p {
-    font-size: 16px;
-    color: #1b2025;
-    line-height: 1.6;
-  }
-  #projects h3 {
-    text-align: center;
-    color: #435d79; 
-    margin-bottom: 20px;
-  }
-  #slider {
-    position: relative;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-  }
-  
-  .slider-container {
-    position: relative;
-  }
-  
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide {
-    min-width: 100%;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .photo img {
-    max-width: 100%; 
-    height: auto;   
-  }
+  background-color: #f9f9f9;
+  padding: 50px;
+  font-family: 'Arial', sans-serif;
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #1a1919;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.education-item {
+  background-color: #fff;
+  border-radius:auto;
+  padding: 30px;
+  margin: 2%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.education-item:hover {
+  transform: scale(1.03);
+}
+
+.education-item h3 {
+  font-size: 24px;
+  color: #151616;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.education-details {
+  font-size: 16px;
+  color: #110b10;
+  margin-bottom: 15px;
+}
+
+.education-details .institution {
+  font-weight: bold;
+  color: #1c1f20;
+}
+
+.education-details .date {
+  color: #161818;
+}
+
+.education-item p {
+  font-size: 16px;
+  color: #1b2025;
+  line-height: 1.6;
+}
+ /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Gallery Section Styles */
+#gallery {
+  padding: 1rem 0;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure images stay in one row */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.gallery-item {
+  flex: 0 0 auto; /* Prevent items from shrinking or growing */
+  width: 400px; /* Adjust as needed */
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+.slide img {
+  width: 200%;
+  height: auto;
+  display: block;
+  align-items: center;
+}
+.photo img {
+  max-width: 50%; 
+  height: auto;   
+} 
+/* ทำกรอบให้กับ contract */
+#contract {
+  border: 2px solid #000; /* กำหนดขนาดและสีของกรอบ */
+  padding: 10px;          /* เพิ่มพื้นที่ระหว่างกรอบและเนื้อหา */
+  margin: auto;           /* เพิ่มพื้นที่รอบกรอบ */
+  border-radius: 8px;    /* ทำให้มุมของกรอบโค้งมน */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับกรอบ */
+  place-items: center; 
+}
+

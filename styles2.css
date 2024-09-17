@@ -22,7 +22,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 header p {
@@ -34,22 +34,14 @@ section {
 }
 
 h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
+    border-bottom: 1.5px solid #333;
+    padding-bottom: auto;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
 }
-
-ul li {
-    background: #eee;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-}
-
 a {
     color: #007BFF;
     text-decoration: none;
@@ -57,4 +49,9 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+p{
+    font-size: 14;
+    margin:auto;           
+    line-height: 1.5;
 }
