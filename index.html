@@ -4,211 +4,491 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chayanapas - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <title>Chayanapas Kaoien - AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+        
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: scale(1.05);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .award-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .award-card:hover::before {
+            left: 100%;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Chayanapas Kaoien</h1>
-            <p> AI Engineer</p>
-            <p><a href="contract.html" class="button">Click for see My CV</a></p>
+<body class="bg-gray-50">
+    <!-- Sticky Navigation -->
+    <nav class="navbar fixed top-0 w-full z-50 py-4">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold gradient-text">Chayanapas</h1>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#about" class="text-gray-700 hover:text-purple-600 transition font-medium">About</a></li>
+                    <li><a href="#education" class="text-gray-700 hover:text-purple-600 transition font-medium">Education</a></li>
+                    <li><a href="#experience" class="text-gray-700 hover:text-purple-600 transition font-medium">Experience</a></li>
+                    <li><a href="#projects" class="text-gray-700 hover:text-purple-600 transition font-medium">Projects</a></li>
+                    <li><a href="#achievements" class="text-gray-700 hover:text-purple-600 transition font-medium">Achievements</a></li>
+                    <li><a href="#research" class="text-gray-700 hover:text-purple-600 transition font-medium">Research</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-purple-600 transition font-medium">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-3/5 mb-10 md:mb-0 fade-in-up">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4">Chayanapas Kaoien</h1>
+                    <p class="text-lg mb-4 opacity-90 leading-relaxed max-w-2xl">
+                        Super AI Engineer Season 5 Participant | AI Researcher | Hackathon Champion
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="badge bg-white/20 text-white">PyTorch</span>
+                        <span class="badge bg-white/20 text-white">Hugging Face</span>
+                        <span class="badge bg-white/20 text-white">FastAPI</span>
+                        <span class="badge bg-white/20 text-white">NLP</span>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <a href="mailto:kchayanapas@gmail.com" class="inline-flex items-center gap-2 text-white hover:text-gray-200 transition">
+                            <i class="fas fa-envelope"></i> kchayanapas@gmail.com
+                        </a>
+                        <a href="tel:+66064-590-4801" class="inline-flex items-center gap-2 text-white hover:text-gray-200 transition">
+                            <i class="fas fa-phone"></i> +66 064-590-4801
+                        </a>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/nus1315" target="_blank" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg inline-flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#contact" class="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-2/5 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-8 border-white/20 shadow-2xl float-animation">
+                        <img src="certificate/IMG_8546.JPG" alt="Chayanapas Kaoien" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
-    <header id="navbar">
-        <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li> <a href="#EDUCATION">Education</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li> <a href="#Experience">Experience</a></li>
-            <li><a href="#contract">Contact</a></li>
-        </ul>
-    </nav>
-    </header>      
 
-    <section id="about">
-        <div class="about">
-            <h2>About Me</h2>
-            <p>&emsp;
-                Driven by a curiosity ignited in my youth, I am dedicated to the development and innovation of artificial intelligence. 
-                Through continuous learning and skill enhancement, I aim to contribute to groundbreaking advancements that have the potential to transform.
-            </p>
-        </div>
-        <div class="bubble-photo">
-          <img src="certificate/IMG_8546.JPG" alt="Photo">
-        </div>
-    </section>
-    <section id="EDUCATION"></section>
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Bechelor of Computer Engineering and Artificial Intelligence (CAI)</h3>
-                <p class="education-details">
-                <span class="institution"><a href="https://www.pim.ac.th">Panyapiwat Institute of Management</span> <br></a>
-                <span class="date">2023 - Present</span>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">About Me</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center mb-8">
+                    Selected among top AI talents in Thailand for the Super AI Engineer Season 5 program. Passionate about building end-to-end ML pipelines and deploying cutting-edge AI solutions. 
+                    Experienced in Thai NLP research, computer vision, and real-time AI systems with proven track record in national hackathon competitions.
                 </p>
-            </div>
-            <div class="education-item">
-                <h3>Advanced Science & Mathematics (Gifted) Program</h3>
-                <p class="education-details">
-                  <span class="institution"><a href="https://donschool.ac.th">Donmueang Taharnargardbumrung School</span> <br></a>
-                  <span class="date">May 2020 - March 2023</span>
-                </p>
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center p-6 bg-purple-50 rounded-xl">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">5+</div>
+                        <div class="text-gray-600">Hackathon Awards</div>
+                    </div>
+                    <div class="text-center p-6 bg-purple-50 rounded-xl">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">10+</div>
+                        <div class="text-gray-600">AI Projects</div>
+                    </div>
+                    <div class="text-center p-6 bg-purple-50 rounded-xl">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">1</div>
+                        <div class="text-gray-600">Research Publication</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <section id="Experience"></section>
-      <div class="education-item">
-          <h2>Experience</h2>
-          <div class="experience-content">
-              <h3>Internship (Language and Semantic Technology Research Team (LST))</h3>
-              <span class="institution"><a href="https://www.nectec.or.th" target="_blank">National Electronics and Computer Technology Center (NECTEC)</a></span><br>
-              <p>Focused on Thai language and dialect processing, particularly in developing a Reversed Dictionary to enhance understanding and access to vocabulary and meanings in low-resource regional contexts.</p>
-          </div>
-      </div>
 
-      <div class="education-item">
-          <!-- <div class="experience-content"> -->
-              <h3>Dual Vocational Training</h3>
-              <p>My professional advancement benefited greatly from my part-time work at 7-Eleven. I gained foundational abilities in cooperation, accountability, and efficient communication.</p>
-          <!-- </div> -->
-      </div>
-  </section>
-  
-
-    <section id="projects">
-      <div class="container">
-          <h2>Projects</h2>
-          
-          <div class="education-item">
-              <a href="https://github.com/porchportal/Finance-Prediction-model-">
-                <h3>Stock Market Prediction</h3>
-              </a>
-              <p>
-                Through the integration of three distinct methodologies—Facebook's Prophet, LSTM (Long Short-Term Memory), and Linear Regression—this project creates an intricate stock market prediction model using PyTorch. 
-                The algorithm uses historical data from Yahoo Finance (yfinance) to anticipate stock prices with accuracy.
-              </p>
-          </div>
-    
-          <div class="education-item">
-              <h3>StockCrush</h3>
-              <p>
-                StockCrush is a model designed to teach how to trade, using the concept of gamification for integration and applying AI to enhance the process.
-              </p>
-          </div>
-      </div>
-  </section>
-  
-      <section id="activities"></section>
-        <div class="container">
-          <h2>Activities</h2>
-          
-          <div class="project-card">
-            <!-- <a href="https://github.com/porchportal/Finance-Prediction-model-"> -->
-              <h3>NVAITC Symposium 2024</h3>
-            <p>
-              <p>Learned to use LangChain for modifying large language models (LLMs).</p>
-              <p>Explored health tech innovations and brain wave forecasting techniques.</p>
-            </p>
-          </div>
-          
-          <div class="project-card">
-            <h3>Kaggle Training</h3>
-            <section id="gallery">
-              <div class="gallery-container">
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Intro_to_Programming.PNG" alt="Image 1">
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">Education</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Bachelor of Computer Engineering and Artificial Intelligence (CAI)</h3>
+                    <a href="https://www.pim.ac.th" target="_blank" class="text-purple-600 hover:text-purple-700 font-semibold text-lg mb-2 inline-block">
+                        Panyapiwat Institute of Management
+                    </a>
+                    <p class="text-gray-600 font-medium mb-2">May 2023 - Present</p>
+                    <p class="text-gray-600">Ongkharak District, Nakhon Nayok, Thailand</p>
                 </div>
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Python.PNG" alt="Image 2">
-                </div>
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Pandas.PNG" alt="Image 3">
-                </div>
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Computer_Vision.PNG" alt="Image 4">
-                </div>
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Computer_Vision.PNG" alt="Image 5">
-                </div>
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Intro_to_Machine_Learning.PNG" alt="Image 6">
-                </div>
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Intermediate_Machine_Learning.PNG" alt="Image 7">
-                </div>
-                <div class="gallery-item">
-                  <img src="certificate/Chayanapas_-_Intro_to_Deep_Learning.PNG" alt="Image 8">
-                </div>
-              </div>
-            </section>
-          </div>
-          
-          <div class="project-card">
-            <h3>Computer Architecture</h3>
-            <div class="photo">
-              <img src="certificate/IMG_8658.jpg" alt="Photo">
             </div>
-          </div>
-          
-          <div class="project-card">
-            <h3>Line Chat Bot</h3>
-            <div class="photo">
-              <img src="certificate/line chat bot.JPEG" alt="Photo">
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">Experience</h2>
+            <div class="space-y-6 max-w-5xl mx-auto">
+                <!-- Super AI Engineer -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl shadow-lg card-hover border-l-4 border-yellow-500">
+                    <div class="flex items-start gap-4">
+                        <div class="text-4xl">🏆</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">Super AI Engineer Season 5 – Participant (KidDee Team)</h3>
+                            <p class="text-purple-600 font-semibold mb-4">APR 2025 - Present</p>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span>Selected among top AI talents in Thailand for a national-level innovation program</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span>Built end-to-end ML pipelines using PyTorch, Hugging Face, AutoGluon, and FastAPI</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span>Deployed models with ONNX Runtime & GPU acceleration (H100), reducing inference latency</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-600 mr-2">•</span>
+                                    <span>Collaborated in agile hackathon-style sprints, focusing on rapid prototyping and pitching solutions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NECTEC Internship -->
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Internship – Language and Semantic Technology Research Team (LST)</h3>
+                    <a href="https://www.nectec.or.th" target="_blank" class="text-purple-600 hover:text-purple-700 font-semibold text-lg mb-2 inline-block">
+                        National Electronics and Computer Technology Center (NECTEC)
+                    </a>
+                    <p class="text-gray-600 font-medium mb-4">2 Dec 2024 – 30 May 2025</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            <span>Conducted research in Thai language and dialect processing with focus on low-resource languages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            <span>Designed and implemented semantic search algorithms and contributed to dictionary construction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            <span>Optimized NLP pipelines for accuracy and efficiency in real-world deployment contexts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2">•</span>
+                            <span>Supported research-to-deployment transition by developing web-based linguistic platforms and experimental tools</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          
-          <div class="project-card">
-            <h3>Cyber Security</h3>
-            <div class="photo">
-              <img src="certificate/cyber security.jpg" alt="Photo">
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Stock Market Prediction -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 gradient-bg"></div>
+                    <div class="p-8">
+                        <a href="https://github.com/porchportal/Finance-Prediction-model-" target="_blank" class="text-2xl font-bold mb-4 text-gray-800 hover:text-purple-600 transition inline-block">
+                            Stock Market Prediction Model
+                        </a>
+                        <p class="text-gray-600 font-medium mb-4">Dec 2023 – Feb 2024</p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Built hybrid forecasting models (Prophet + LSTM + regression in PyTorch) for stock price prediction. 
+                            Integrated financial datasets from Yahoo Finance and improved model accuracy with advanced feature engineering.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="badge bg-purple-100 text-purple-700">PyTorch</span>
+                            <span class="badge bg-purple-100 text-purple-700">LSTM</span>
+                            <span class="badge bg-purple-100 text-purple-700">Prophet</span>
+                            <span class="badge bg-purple-100 text-purple-700">Yahoo Finance API</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Voice-Interactive AI Avatar -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 gradient-bg"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Voice-Interactive AI Avatar Project</h3>
+                        <p class="text-gray-600 font-medium mb-4">2024 – Present</p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Built a 2D voice-interactive avatar integrating speech recognition (Whisper) and facial animation. 
+                            Focused on naturalistic multimodal interaction with Thai NLP pipelines for real-time response.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="badge bg-purple-100 text-purple-700">Whisper</span>
+                            <span class="badge bg-purple-100 text-purple-700">Thai NLP</span>
+                            <span class="badge bg-purple-100 text-purple-700">Speech Recognition</span>
+                            <span class="badge bg-purple-100 text-purple-700">Animation</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>          
-
-          </div>
         </div>
-      </section>
+    </section>
 
-    <section id="contract">
-        <h2>Contract Me</h2>
-        <div class="wrapper">
-          <a href="https://www.facebook.com/chayanapas.kongsamrong/" target="_blank" class="button"> <!-- Link to Facebook -->
-            <div class="icon"><i class="fab fa-facebook-f"></i></div>
-            <span>Facebook</span>
-        </a>
-        <a href="https://github.com/nus1315" target="_blank" class="button"> <!-- Link to Facebook -->
-          <div class="icon"><i class="fab fa-github-f"></i></div>
-          <span>Github</span>
-      </a>
-      <a href="https://www.linkedin.com/in/chayanapas-kaoien-1802001b9/" target="_blank" class="button"> <!-- Link to Facebook -->
-        <div class="icon"><i class="fab fa-linkedin-f"></i></div>
-        <span>linked-in</span>
-    </a>
-    <a href="https://www.instagram.com/nus.1315/" target="_blank" class="button"> <!-- Link to Facebook -->
-      <div class="icon"><i class="fab -instagram-f"></i></div>
-      <span>Instagram</span>
-  </a>
-      </div>
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">Hackathon Achievements</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1st Place -->
+                <div class="award-card bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-2xl shadow-lg border-l-4 border-yellow-500">
+                    <div class="text-5xl mb-4">🥇</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">1st Place</h3>
+                    <p class="font-semibold text-purple-600 mb-2">Sales Forecasting & Product Assortment</p>
+                    <p class="text-sm text-gray-600 mb-3">CP Axtra / Tesco Lotus</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Achieved 71.87% accuracy forecasting sales across 30+ stores using AutoGluon & XGBoost
+                    </p>
+                </div>
 
+                <!-- 2nd Place -->
+                <div class="award-card bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl shadow-lg border-l-4 border-gray-400">
+                    <div class="text-5xl mb-4">🥈</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">2nd Place</h3>
+                    <p class="font-semibold text-purple-600 mb-2">Cognitive Profiling via Action Recognition</p>
+                    <p class="text-sm text-gray-600 mb-3">Image Matters Asia</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Built MediaPipe + TCN model to classify cognitive traits from movement patterns
+                    </p>
+                </div>
+
+                <!-- 3rd Place -->
+                <div class="award-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl shadow-lg border-l-4 border-orange-500">
+                    <div class="text-5xl mb-4">🥉</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">3rd Place</h3>
+                    <p class="font-semibold text-purple-600 mb-2">Dominant Wave Height Estimation</p>
+                    <p class="text-sm text-gray-600 mb-3">AI Association of Thailand</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Predicted wave heights from satellite-sensor data, optimized RMSE/MAE
+                    </p>
+                </div>
+
+                <!-- 4th Place - Liver -->
+                <div class="award-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-lg border-l-4 border-blue-500">
+                    <div class="text-5xl mb-4">🎖️</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">4th Place</h3>
+                    <p class="font-semibold text-purple-600 mb-2">Liver Fibrosis Prediction</p>
+                    <p class="text-sm text-gray-600 mb-3">Chulalongkorn University</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Applied deep learning on ultrasound images with attention models, improving fibrosis detection
+                    </p>
+                </div>
+
+                <!-- 4th Place - Rainfall -->
+                <div class="award-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-lg border-l-4 border-blue-500">
+                    <div class="text-5xl mb-4">🎖️</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">4th Place</h3>
+                    <p class="font-semibold text-purple-600 mb-2">Bias Correction for GSMaP Rainfall</p>
+                    <p class="text-sm text-gray-600 mb-3">Hydro Informatics Institute</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Built DeepONet-inspired model correcting rainfall bias with geospatial datasets
+                    </p>
+                </div>
+
+                <!-- Kaggle Certificates -->
+                <div class="award-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">📜</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Kaggle Certifications</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Completed multiple advanced courses: Python, Pandas, Machine Learning, Deep Learning, and Computer Vision
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="nn" align=" right">
-            <form id="contactForm" action="https://formspree.io/f/mgvwbyzg" method="POST">
-                <p><input type="text" id="name" name="name" placeholder="Your Name" required></p>
-                <p><input type="email" id="email" name="email" placeholder="Your Email" required></p>
-                <p><textarea id="message" name="message" placeholder="Your Message" required></textarea></p>
-                <p><button type="submit">Send Message</button></p>
-            </form>
-            <p id="statusMessage"></p>            
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">Research & Publications</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="flex items-start gap-4">
+                        <div class="text-4xl">📄</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">Thai NLP for Low-Resource Dialects</h3>
+                            <p class="text-purple-600 font-semibold mb-3">ISAI-NLP Conference 2025 (Under Submission)</p>
+                            <p class="text-gray-700 leading-relaxed">
+                                Co-authored research on Thai Natural Language Processing for low-resource dialects, bridging linguistic resources with applied AI. 
+                                This work focuses on developing accessible language technology for underrepresented Thai dialect communities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </section>
-        <script src="sticky.js"></script>
-    <footer>
-        <p align ='right'>&copy; 2024 september 27 Chayanapas.</p>
-    </footer>
-    
-</body>
-</html>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">Skills & Tools</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Programming</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="badge bg-white text-purple-700 shadow">Python</span>
+                        <span class="badge bg-white text-purple-700 shadow">JavaScript</span>
+                        <span class="badge bg-white text-purple-700 shadow">HTML/CSS</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">AI/ML Frameworks</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="badge bg-white text-purple-700 shadow">PyTorch</span>
+                        <span class="badge bg-white text-purple-700 shadow">Hugging Face</span>
+                        <span class="badge bg-white text-purple-700 shadow">AutoGluon</span>
+                        <span class="badge bg-white text-purple-700 shadow">ONNX</span>
+                        <span class="badge bg-white text-purple-700 shadow">Scikit-learn</span>
+                        <span class="badge bg-white text-purple-700 shadow">FastAPI</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Tools & Platforms</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="badge bg-white text-purple-700 shadow">Git</span>
+                        <span class="badge bg-white text-purple-700 shadow">MongoDB</span>
+                        <span class="badge bg-white text-purple-700 shadow">Kaggle</span>
+                        <span class="badge bg-white text-purple-700 shadow">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gradient-to-br from-purple-50 to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Contact Information</h3>
+                    <div class="space-y-4">
+                        <a href="mailto:kchayanapas@gmail.com" class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition social-icon">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-700">Email</div>
+                                <div class="text-gray-600 text-sm">kchayanapas@gmail.com</div>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+66064-590-4801" class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition social-icon">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-700">Phone</div>
+                                <div class="text-gray-600 text-sm">+66 064-590-4801</div>
+                            </div>
+                        </a>
+                        
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center
